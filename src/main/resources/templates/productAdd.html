@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mobile Store</title>
+<link rel="stylesheet" href="css/productAdd.css">
+</head>
+<body>
+	<header> 
+        <a href="login.html"><button type="button" class="btn btn-primary btn-block">Logout</button></a>
+        <p>Products</p> <br /> 
+        <h1> Add products</h1>
+    </header>
+    <nav>
+    <h2> Add new product </h2>
+    <form name="addForm"  method="POST">
+        <div class="container"> 
+            <div class="row">
+                <div class="col-25">
+                    <label>Product Name</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" name="productname" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="country">Unit Price</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" name="unitprice" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label>Units in Stock</label>
+                </div>
+                <div class="col-75">
+                    <input type="number" name="unitinstock" required> 
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label>Description</label>
+                </div>
+                <div class="col-75">
+                    <textarea id="subject" name="description" 
+                    style="height:50px"></textarea> 
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label>Manufacturer</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" name="manufacturer"> 
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label>Category</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" name="category"> 
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label>Condition</label>
+                </div>
+                <div class="col-75">
+                    <input type="radio" name="condition" value="New"> New
+                    <input type="radio" name="condition" value="Old"> Old
+                    <input type="radio" name="condition" value="Refurbished"> Refurbished
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label>Product Image File</label>
+                </div>
+                <div class="col-75">
+                    <input type="file" name="productImageFile"> 
+                </div>
+            </div>
+            <div class="row">
+                <button type="submit">Add product</button>
+            </div>     
+        </div> 
+    </form>
+    </nav> 
+</body>
+</html>
