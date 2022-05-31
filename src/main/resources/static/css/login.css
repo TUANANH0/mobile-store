@@ -1,0 +1,64 @@
+h1{
+	font-size: 60px;
+	padding: 50px;
+	margin: -8px;
+	display: block;
+	background-color:rgb(206, 203, 203);
+}
+h2{
+	padding-right: 200px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	box-sizing: border-box;
+	margin-top: 30px;
+	padding-top: 10px;
+	font-size: 20px;
+	border: 1px solid #6b6b6b;
+	display: inline-block;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	margin-bottom: -2px;
+	background-color:rgb(206, 203, 203);
+}
+form {   
+      
+	display: inline-block;
+	padding-left: 550px;
+	padding-top: 20px;
+
+}   
+div{
+	border-right: 1px solid;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	padding-left: 550px;
+	padding-top: 10px;
+	border-bottom: 1px solid;
+	border-left: 1px solid;
+}
+button {   
+       background-color: #5CB85C;   
+       width: 100%;  
+       color: white;   
+       padding: 15px;   
+       margin: 10px 0px;   
+       border: none;   
+       cursor: pointer;   
+} 
+button:hover {   
+	background-color: blue;
+	opacity: 0.5;   
+}   
+input{   
+        width: 100%;   
+        margin: 8px 0;  
+        padding: 12px 20px;   
+        display: inline-block;   
+        border: 1px solid rgb(53, 51, 51);   
+        box-sizing: border-box;
+        border-radius: 5px;
+}  
+ .container {   
+        padding: 15px;  
+        color: rgb(119, 116, 116);   
+} 

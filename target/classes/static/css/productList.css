@@ -1,0 +1,92 @@
+header{
+	background-color: #EEEEEE;
+	padding: 50px;
+	margin: -8px;
+}
+h1{
+	font-size: 20px;
+	padding-bottom: -10px;
+	margin-top: -60px;
+	margin-left: 40px;
+}
+a{
+	float: right;
+	font-size: 15px;
+	padding: 7px;
+	display: block;
+	border: 1px solid;
+	color: #DEDEDE;
+	border-radius: 2px;
+}
+header p{
+	font-size: 60px;
+	display: block;
+	background-color: #EEEEEE;
+	padding: 50px;
+	margin: -8px;
+}
+.product_list{
+	padding-left: 50px;
+	padding-top: 20px;
+}
+.product_item {
+   float:left;
+   width:320px; 
+   display:block;
+   padding-top: 80px;
+   padding-right: 43px;
+}
+.product_item p{
+	color: black;
+	font-size: 24px;
+	text-decoration: none;
+
+}
+.product_item span{
+	color: black;
+	font-size: 16px;
+	padding-top: 900px;
+	padding-bottom: 900px;
+}
+.product_item a{
+	text-decoration: none;
+}
+img{
+	width: auto; 
+	height: 200px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+button[name=detail]{
+		background-color: #428BCA;
+		color: white;
+		border-radius: 5px;
+		padding-right: 15px;
+		padding-left: 15px;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		margin-left: 60px;
+		border: none;
+}
+button[name=order]{
+		background-color: #F0AD4E;
+		color: white;
+		border-radius: 5px;
+		padding-right: 15px;
+		padding-left: 15px;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		border: none;
+}
+header button{
+	background-color: #FFFFFF;
+	color: black;
+	border: 1px solid #D5D5D5;
+	float: right;
+	font-size: 15px;
+	padding: 10px;
+	display: block;
+	border-radius: 5px;
+	position: relative;
+}
