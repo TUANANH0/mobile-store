@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Product</title>
+    <style>
+        body {
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.heading {
+    padding: 0.5px 0px 2% 6%;
+    margin: 0%;
+    background-color: #e7dcdc;
+}
+
+.heading .title {
+    font-size: 250%;
+    margin-bottom: 10px;
+}
+
+.heading .description {
+    font-size: 170%;
+    margin-bottom: 10px;
+}
+
+.heading button {
+    float: right;
+    margin-right: 5%;
+    margin-top: 2%;
+    padding: 5px 10px 5px 10px;
+    color: white;
+    background-color: red;
+    border-radius: 5px;
+}
+
+.content .title {
+    font-size: large;
+    margin: 2% 6% 0% 6%;
+}
+
+hr {
+    margin: 0% 6% 0% 6%
+}
+
+.product-information-fill-in-form {
+    margin: 1% 8% 0% 8%;
+}
+
+.product-information-fill-in-form .label {
+    text-align: right;
+    padding-right: 30px;
+}
+
+.product-information-fill-in-form .input {
+    padding: 10px 0px 10px 0px;
+}
+
+.product-information-fill-in-form input[type=submit] {
+    background-color: rgb(3, 113, 204);
+    padding: 2% 3% 2% 3%;
+    border-radius: 5px;
+    color: white;
+}
+    </style>
+</head>
+<body>
+<div class="heading">
+    <a th:href="@{/logout}">
+    <button>logout</button>
+    </a>
+
+    <p class="title">Products</p>
+    <p class="S">Add products</p>
+</div>
+<div class="content">
+    <p class="title">
+        Add new product
+    </p><hr>
+    <table class="product-information-fill-in-form" border="0">
+        <tbody>
+        <form th:action="@{/product/add}" method="post">
+        <tr>
+            <td class="label"><b><small>Product Name</small></b></td>
+            <td class="input"><input type="text" name="txtProductName" style="width: 205px;"></td>
+        </tr>
+        <tr>
+            <td class="label"><b><small>Unit Price</small></b></td>
+            <td class="input"><input type="number" name="txtUnitPrice" style="width: 205px;"></td>
+        </tr>
+        <tr>
+            <td class="label"><b><small>Units in stock</small></b></td>
+            <td class="input"><input type="number" name="txtUnitsInStock" value="0" style="width: 205px;"></td>
+        </tr>
+        <tr>
+            <td class="label"><b><small>Description</small></b></td>
+            <td class="input"><textarea name="txtDescription" style="height: 35px; width: 195px;"></textarea></td>
+        </tr>
+        <tr>
+            <td class="label"><b><small>Manufacturer</small></b></td>
+            <td class="input"><input type="text" name="txtManufacturer" style="width: 205px;"></td>
+        </tr>
+        <tr>
+            <td class="label"><b><small>Condition</small></b></td>
+            <td class="input">
+                <input type="radio" name="cboCondition" checked="" value="New">New
+                <input type="radio" name="cboCondition" value="Old">Old
+                <input type="radio" name="cboCondition" value="Refurbished" >Refurbished
+            </td>
+        </tr>
+        <tr>
+            <td class="label"><b><small>Product Image Link</small></b></td>
+            <td class="input"><input type="text" name="imgProductImage" ></td>
+        </tr>
+        <tr>
+            <td class="label"></td>
+            <td class="input"><input type="submit" value="Add Product"></td>
+        </tr>
+        </form>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Details</title>
+    <style>
+        body {
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.heading {
+    padding: 0.5px 0px 2% 10%;
+    margin: 0%;
+    background-color: #e7dcdc;
+}
+
+.heading .title {
+    font-size: 250%;
+    margin-bottom: 10px;
+}
+
+img {
+    width: 30%;
+}
+
+.product-information {
+    display: block;
+    width: 55%;
+    float: right;
+}
+
+.product-information .back-btn {
+    padding: 5px 10px 5px 10px;
+    background-color: rgb(12, 180, 12);
+    color: white;
+    border-color: rgb(15, 173, 15);
+}
+
+.product-information .order-btn {
+    background-color: rgb(214, 150, 32);
+    padding: 5px 10px 5px 10px;
+    color: white;
+}
+
+#manufacturer {
+    text-transform: capitalize;
+}
+
+#category {
+    color: rgb(13, 138, 138);
+}
+    </style>
+</head>
+<body>
+<div class="heading">
+    <p class="title">Products</p>
+</div>
+<div class="content">
+    <form th:action="@{/cart/add}" method="post">
+    <img id="product-image" th:src="${Product.image}" alt="">
+    <div class="product-information">
+        <h3 id="item-name" th:text="${Product.name}"></h3>
+        <p><small id="description" th:text="${Product.description}"></small></p>
+        <P><small><b>Item code :</b> <small style="background-color: rgb(214, 150, 32);;
+                padding: 5px;
+                border-radius: 5px;
+                color: floralwhite;" id="item-code"
+                th:text="'152644038' + ${Product.id} + '8' + ${Product.id} + '5'"></small></small></P>
+        <P><small><b>manufacturer :</b> <span id="manufacturer" th:text="${Product.manufacturer}"></span></small></P>
+        <P><small><b>available units in stock :</b> <span id="stock" th:text="${Product.stock}"></span></small></P>
+        <p><span id="price" th:text="${Product.unitPrice}"></span> USD</p>
+        <a th:href="@{/product/list}">
+            <input type="reset" value="Back" class="back-btn" \>
+        </a>
+            <input type="submit" value="Order Now" class="order-btn">
+        <input type="hidden" name="code" th:value="${Product.id}">
+
+    </div>
+    </form>
+</div>
+</body>
+</html>

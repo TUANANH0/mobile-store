@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+  <style>
+    body {
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.heading {
+    font-size: 250%;
+    padding: 0.5px 0px 0.5px 6%;
+    margin: 0%;
+    background-color: #e7dcdc;
+}
+
+.login-container {
+    display: block;
+    border: #e7dcdcad solid;
+    margin: 3% 36% 0px 37%;
+    border-radius: 5px;
+}
+
+.login-container-heading {
+    padding: 0.1px 0px 0.1px 3%;
+    margin: 0%;
+    background-color: #e7dcdc;
+    height: 0%;
+    border: #e7dcdc solid 1px;
+    border-radius: 5px 5px;
+}
+
+.login-container-content{
+    margin: 5px;
+    text-align: center;
+}
+
+.login-container-content input[type=text],
+input[type=password] {
+    width: 90%;
+    height: 25px;
+    margin: 1%;
+    padding-left: 13px;
+    border-radius: 5px;
+}
+
+.login-container-content button {
+    background-color: rgb(12, 180, 12);
+    border: rgb(4, 153, 4) solid 2px;
+    padding: 10px;
+    width: 95%;
+    margin: 5px;
+    color: white;
+    font-size: 105%;
+    border-radius: 5px;
+}
+  </style>
+</head>
+<body>
+<div class="heading">
+  <p class="Title">Mobile Store</p>
+</div>
+<div class="background">
+  <div class="login-container">
+    <div class="login-container-heading">
+      <p>Please sign in</p>
+    </div>
+    <div class="login-container-content">
+      <form th:action="@{/login}" method="post">
+      <input type="text" name="txtUsername" placeholder="User Name" value=""><br>
+      <input type="password" name="txtPassword" placeholder="Password" value="" maxlength="16"><br>
+      <button type="submit" class="login-btn" >Login</button>
+      </form>
+    </div>
+  </div>
+</div>
+</body>
+</html>

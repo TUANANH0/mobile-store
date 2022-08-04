@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cart</title>
+    <style>
+        body {
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.heading {
+    padding: 0.5px 0px 2% 8.5%;
+    margin: 0%;
+    background-color: #e7dcdc;
+}
+
+.heading .title {
+    font-size: 250%;
+    margin-bottom: 0px;
+}
+
+.heading .description {
+    font-size: 110%;
+    margin-bottom: 10px;
+    margin-top: 8px;
+}
+
+.content {
+    padding-left: 8%;
+}
+
+button {
+    padding: 5px 10px 5px 10px;
+    color: white;
+    border-radius: 5px;
+}
+
+.ordered-product-in-cart {
+    width: 90%;
+    text-align: left;
+}
+
+.ordered-product-in-cart tr td, th{
+    border-top: thistle solid 1px;
+    padding: 1%;
+}
+
+.ordered-product-in-cart .product-col {
+    width: 40%;
+}
+
+.checkout-btn {
+    float: right;
+    margin-right: 10%;
+    margin-top: 2%;
+}
+
+.clear-btn {
+    margin-top: 2%;
+}
+
+.checkout-btn, .continue-btn {
+    background-color: rgb(12, 180, 12);
+}
+
+.clear-btn, .remove-btn {
+    background-color: red;
+}
+
+.clear-btn, .continue-btn {
+    margin-left: 1%;
+}
+    </style>
+</head>
+<body>
+<div class="heading">
+    <p class="title">Cart</p>
+    <p class="description">All the selected products in your cart</p>
+</div>
+<div class="content">
+    <a th:href="@{/cart/clear}">
+        <button class="clear-btn">Clear Cart</button>
+    </a>
+    <a th:href="@{/cart/checkout}">
+        <button class="checkout-btn">Check out</button>
+    </a>
+    <table class="ordered-product-in-cart">
+        <thead>
+        <tr>
+            <th class="product-col"><b>Product</b></th>
+            <th class="quantity-col"><b>Quantity</b></th>
+            <th class="unitPrice-col"><b>Unit price</b></th>
+            <th class="price-col"><b>Price</b></th>
+            <th class="action-col"><b>Action</b></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="item : ${Cart}">
+            <form th:action="@{/cart/remove}" method="post">
+            <td th:text="${item.product.name}">
+
+            </td>
+            <td th:text="${item.quantity}"></td>
+            <td th:text="${item.price/item.quantity}"></td>
+            <td th:text="${item.price}"></td>
+            <td>
+                <input type="hidden" name="code" th:value="${item.product.id}"/>
+                <button type="submit" class="remove-btn">Remove</button>
+            </td>
+            </form>
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+            <td><b>Grand Total</b></td>
+            <td colspan="2" style="text-align: left;" th:text="${Total}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <a th:href="@{/product/list}">
+        <button class="continue-btn">continue shopping</button>
+    </a>
+
+</div>
+</body>
+</html>
